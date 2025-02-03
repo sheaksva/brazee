@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color pop Brazee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #80f6f8; /* Radium green background */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace; /* Set font to Brush Script MT */
+        }
+        .container {
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            background-color: #80f6f8;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Three equal-width columns */
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+        }
+        .product img {
+            width: 90%;
+            height: auto;
+            border-radius: 20px;
+        }
+        .product input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        .product input[type="number"] {
+            margin-top: 10px;
+            width: 50px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #0c0c0c;
+            color: rgb(243, 238, 238);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .customer-details, .order-summary {
+            display: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        /* Center the customer form */
+        .customer-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .customer-details input {
+            margin-bottom: 10px;
+            width: 200px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>COLOR POP BRAZEE</h1>
+        <form id="productForm">
+            <div class="products">
+                
+                <div class="product">
+                    <img src="01.jpg" alt="Brazee 1">
+                    <p>Brazee 1</p>
+                    <input type="checkbox" name="product" value="Bracelet 1" data-img="1.jpg">
+                    <input type="number" name="quantity1" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="02.jpg" alt="Brazee 2">
+                    <p>Brazee 2</p>
+                    <input type="checkbox" name="product" value="Bracelet 2" data-img="2.jpg">
+                    <input type="number" name="quantity2" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="03.jpg" alt="Brazee 3">
+                    <p>Brazee 3</p>
+                    <input type="checkbox" name="product" value="Bracelet 3" data-img="3.jpg">
+                    <input type="number" name="quantity3" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="04.jpg" alt="Brazee 4">
+                    <p>Brazee 4</p>
+                    <input type="checkbox" name="product" value="Bracelet 4" data-img="4.jpg">
+                    <input type="number" name="quantity4" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="05.jpg" alt="Brazee 5">
+                    <p>Brazee 5</p>
+                    <input type="checkbox" name="product" value="Bracelet 5" data-img="5.jpg">
+                    <input type="number" name="quantity5" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="06.jpg" alt="Brazee 6">
+                    <p>Brazee 6</p>
+                    <input type="checkbox" name="product" value="Bracelet 6" data-img="6.jpg">
+                    <input type="number" name="quantity6" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="07.jpg" alt="Brazee 7">
+                    <p>Brazee 7</p>
+                    <input type="checkbox" name="product" value="Bracelet 7" data-img="7.jpg">
+                    <input type="number" name="quantity7" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="08.jpg" alt="Brazee 8">
+                    <p>Brazee 8</p>
+                    <input type="checkbox" name="product" value="Bracelet 8" data-img="8.jpg">
+                    <input type="number" name="quantity8" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="09.jpg" alt="Brazee 9">
+                    <p>Brazee 9</p>
+                    <input type="checkbox" name="product" value="Bracelet 9" data-img="9.jpg">
+                    <input type="number" name="quantity9" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="10.jpg" alt="Brazee 10">
+                    <p>Brazee 10</p>
+                    <input type="checkbox" name="product" value="Bracelet 10" data-img="10.jpg">
+                    <input type="number" name="quantity10" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="11.jpg" alt="Brazee 11">
+                    <p>Brazee 11</p>
+                    <input type="checkbox" name="product" value="Bracelet 11" data-img="11.jpg">
+                    <input type="number" name="quantity11" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="12.jpg" alt="Brazee 12">
+                    <p>Brazee 12</p>
+                    <input type="checkbox" name="product" value="Bracelet 12" data-img="12.jpg">
+                    <input type="number" name="quantity12" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="13.jpg" alt="Brazee 13">
+                    <p>Brazee 13</p>
+                    <input type="checkbox" name="product" value="Bracelet 13" data-img="13.jpg">
+                    <input type="number" name="quantity13" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="14.jpg" alt="Brazee 14">
+                    <p>Brazee 14</p>
+                    <input type="checkbox" name="product" value="Bracelet 14" data-img="14.jpg">
+                    <input type="number" name="quantity14" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="15.jpg" alt="Brazee 15">
+                    <p>Brazee 15</p>
+                    <input type="checkbox" name="product" value="Bracelet 15" data-img="15.jpg">
+                    <input type="number" name="quantity15" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="16.jpg" alt="Brazee 16">
+                    <p>Brazee 16</p>
+                    <input type="checkbox" name="product" value="Bracelet 16" data-img="16.jpg">
+                    <input type="number" name="quantity16" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="17.jpg" alt="Brazee 17">
+                    <p>Brazee 17</p>
+                    <input type="checkbox" name="product" value="Bracelet 17" data-img="17.jpg">
+                    <input type="number" name="quantity17" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="18.jpg" alt="Bracelet 18">
+                    <p>Brazee 18</p>
+                    <input type="checkbox" name="product" value="Bracelet 18" data-img="18.jpg">
+                    <input type="number" name="quantity18" min="1" placeholder="Qty" class="quantity">
+                </div>
+                <div class="product">
+                    <img src="19.jpg" alt="Brazee 19">
+                    <p>Brazee 19</p>
+                    <input type="checkbox" name="product" value="Bracelet 19" data-img="19.jpg">
+                    <input type="number" name="quantity19" min="1" placeholder="Qty" class="quantity">
+                </div>
+            </div>
+
+            <a href="#" class="btn" onclick="showCustomerDetails()">Proceed to Order</a>
+        </form>
+
+        <!-- Customer details form (Centered) -->
+        <div class="customer-details">
+            <h2>Customer Details</h2>
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required><br><br>
+            
+            <label for="referenceName">Reference Name:</label>
+            <input type="text" id="referenceName" name="referenceName" required><br><br>
+            
+            <label for="month">Month:</label>
+            <input type="text" id="month" name="month" required><br><br>
+
+            <a href="#" class="btn" onclick="downloadPDF()">Place Order and Download PDF</a>
+        </div>
+
+        <!-- Order summary (Hidden by default) -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="orderList"></ul>
+        </div>
+    </div>
+
+    <script>
+        // Show the customer details form after product selection
+        function showCustomerDetails() {
+            const selectedProducts = document.querySelectorAll('input[name="product"]:checked');
+            if (selectedProducts.length === 0) {
+                alert("Please select at least one bracelet.");
+                return;
+            }
+
+            // Show customer details form and hide product selection
+            document.querySelector('.customer-details').style.display = 'block';
+            document.querySelector('.products').style.display = 'none';
+
+            // Generate order summary
+            const orderList = document.getElementById('orderList');
+            selectedProducts.forEach((product, index) => {
+                const quantityInput = document.querySelector(`input[name="quantity${index + 1}"]`);
+                const quantity = quantityInput ? quantityInput.value : 1;
+                const productName = product.value;
+                const productImg = product.getAttribute('data-img');
+
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `${productName} - Qty: ${quantity}`;
+                orderList.appendChild(listItem);
+            });
+        }
+
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Get customer details
+            const customerName = document.getElementById('customerName').value;
+            const referenceName = document.getElementById('referenceName').value;
+            const month = document.getElementById('month').value;
+
+            if (!customerName || !referenceName || !month) {
+                alert("Please fill in all the customer details.");
+                return;
+            }
+
+            // Get selected products and quantities
+            const selectedProducts = document.querySelectorAll('input[name="product"]:checked');
+            if (selectedProducts.length === 0) {
+                alert("Please select at least one bracelet.");
+                return;
+            }
+
+            // Add customer details to the PDF
+            doc.setFontSize(16);
+            doc.text('Customer Name: ' + customerName, 10, 20);
+            doc.text('Reference Name: ' + referenceName, 10, 30);
+            doc.text('Month: ' + month, 10, 40);
+            doc.text('Selected Bracelets:', 10, 50);
+
+            let yOffset = 60;
+
+            // This function returns a promise that resolves once the image is loaded
+            function loadImage(src) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = () => resolve(img);
+                    img.onerror = () => reject(new Error('Image loading failed'));
+                });
+            }
+
+            // Process each selected product
+            const imagePromises = Array.from(selectedProducts).map((product, index) => {
+                const productName = product.value;
+                const productImg = product.getAttribute('data-img');
+
+                const quantityInput = document.querySelector(`input[name="quantity${index + 1}"]`);
+                const quantity = quantityInput ? quantityInput.value : 1;
+
+                return loadImage(productImg).then((img) => {
+                    // Add product name and quantity text to PDF
+                    doc.text(`${index + 1}. ${productName} - Qty: ${quantity}`, 10, yOffset);
+                    yOffset += 10;
+
+                    // Add image to PDF
+                    doc.addImage(img, 'JPEG', 10, yOffset, 30, 30);
+                    yOffset += 40;
+
+                    // Add page if content overflows
+                    if (yOffset > 270) {
+                        doc.addPage();
+                        yOffset = 20;
+                    }
+                });
+            });
+
+            // Once all images are loaded, generate the PDF
+            Promise.all(imagePromises)
+                .then(() => {
+                    doc.save('order_details.pdf');
+                })
+                .catch((error) => {
+                    console.error(error);
+                    alert('An error occurred while generating the PDF.');
+                });
+        }
+    </script>
+</body>
+</html>
