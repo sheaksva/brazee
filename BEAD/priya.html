@@ -297,7 +297,7 @@
         const quantity = quantityInput ? quantityInput.value : 1;  // Default to 1 if not set
 
         // Add product name and quantity text to PDF
-        doc.text(`${index + 1}. ${productName} - Qty: ${quantity}`, 10, yOffset);
+        doc.text(`${index + 1}. ${productName} + Qty: ${quantity}`, 10, yOffset);
         yOffset += 10;
 
         // Adding image to the PDF
